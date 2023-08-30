@@ -1,9 +1,6 @@
 # employee-management-system-backend
 Employee management System Project using Spring Boot [Rest APIs] BACKEND -> 5 microservices
 
-Project Blog Link: 
-https://www.codewithmurad.com/2023/05/employee-management-system-using-springboot-microservices-react.html
-
 Employee Management System Microservices:
 
 1) API Gateway Service:
