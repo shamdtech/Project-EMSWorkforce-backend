@@ -1,0 +1,38 @@
+server:
+  port: 9000
+  
+#datasource configuration  
+spring: 
+  application:
+    name: employee-api-gateway
+    
+  cloud:
+    gateway:
+      routes:
+      - id: employee-user-service
+        uri: lb://employee-user-service
+        predicates:
+        - Path=/user/**
+        
+        # - Path=/user/**, /staff/**  example for more controller
+        
+      - id: employee-salary-service
+        uri: lb://employee-salary-service
+        predicates:
+        - Path=/salary/**
+        
+      - id: employee-salary-service
+        uri: lb://employee-department-service
+        predicates:
+        - Path=/department/** 
+   
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+      
+    
